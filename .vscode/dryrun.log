@@ -1,0 +1,5 @@
+make.exe --dry-run --always-make --keep-going --print-directory
+make: Entering directory 'd:/OneDrive - Institut Teknologi Bandung/Arsip Kuliah/WOW INFORMATIKA/Semester 4 waw/Stima/Makalah/Program/MazeSolverBacktrace'
+javac -d ./bin ./src/App.java ./src/Runner.java ./src/MazeReader.java ./src/Maze.java ./src/Mouse.java ./src/Block.java ./src/Arah.java 
+make: Leaving directory 'd:/OneDrive - Institut Teknologi Bandung/Arsip Kuliah/WOW INFORMATIKA/Semester 4 waw/Stima/Makalah/Program/MazeSolverBacktrace'
+ 
