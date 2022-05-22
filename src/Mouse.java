@@ -1,4 +1,5 @@
 import java.util.Map;
+import java.util.Scanner;
 
 public class Mouse {
     private int posX, posY;
@@ -48,9 +49,21 @@ public class Mouse {
         this.posY = maze.getStartY();
         this.mouseMap = maze;
         this.arah = maze.getStartArah();
+        int iterasi = 0;
         while (maze.getCell(this.posX, this.posY) != Block.FINISH) {
+            iterasi += 1;
+            try {
+                Thread.sleep(200);
+                System.out.print("\033[H\033[2J");  
+                System.out.flush();
+            } catch (Exception e) {
+            }
+            this.mouseMap.print(this);
             System.out.println("posisi mouse: " + this.posX + " " + this.posY);
             System.out.println("arah mouse: " + this.arah);
+            System.out.println("iterasi: " + iterasi);
+            Scanner s = new Scanner(System.in);
+            String inputString = s.nextLine();
             boolean b = false;
             if(this.arah == Arah.BAWAH){
                 // Bawah lurus
@@ -144,14 +157,10 @@ public class Mouse {
                     }
                 }
             }
-            try {
-                Thread.sleep(200);
-                System.out.print("\033[H\033[2J");  
-                System.out.flush();
-            } catch (Exception e) {
-            }
-            this.mouseMap.print(this);
+            
+            
         }
+        
         // for (int i = 0; i < mouseMap.getNRows(); i++) {
         //     for (int j = 0; j < mouseMap.getNCols(); j++) {
         //         if (i ==0 || j == 0 || i == mouseMap.getNRows() - 1 || j == mouseMap.getNCols() - 1){
